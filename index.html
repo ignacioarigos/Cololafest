@@ -14,9 +14,9 @@
             color: #333; /* Color de texto */
         }
         header {
-            background-image: url('https://drive.google.com/uc?id=1EMmWCa-GvvU9rf1qMSDTzk9NSdUKYfqC'); /* Enlace directo a la imagen de portada */
+            background-image: url('https://raw.githubusercontent.com/ignacioarigos/Cololafest/main/cololafest-banner.png'); /* Enlace directo a la imagen de portada en GitHub */
             background-size: cover;
-            height: 280px; /* Altura de la portada ajustada a 2 cm menos */
+            height: 280px; /* Altura de la portada */
             position: relative;
             color: white;
             display: flex;
@@ -46,13 +46,6 @@
         .content {
             padding: 10px; /* Espaciado reducido */
         }
-        .map, .weather {
-            width: 100%;
-            height: 300px;
-            margin: 20px 0;
-            border-radius: 10px; /* Bordes redondeados */
-            overflow: hidden; /* Esconder el desbordamiento */
-        }
         .section {
             margin: 20px 0;
             text-align: left;
@@ -60,17 +53,6 @@
             padding: 20px;
             border-radius: 10px; /* Bordes redondeados */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
-        }
-        .banner {
-            width: 100%;
-            overflow: hidden;
-        }
-        .banner-img {
-            width: 100%;
-            height: auto;
-            max-height: 200px; /* controla la altura (3–5 cm aprox.) */
-            object-fit: cover;
-            border-radius: 10px; /* Bordes redondeados */
         }
         .countdown {
             position: absolute;
@@ -106,18 +88,10 @@
     <a href="#lista-asistentes">Lista de Asistentes</a>
     <a href="#poesias">Poesías</a>
     <a href="#fotos">Fotos</a>
+    <a href="como-llegar.html">Cómo llegar</a> <!-- Enlace a la nueva página para el mapa -->
 </nav>
 
 <div class="content">
-    <section class="banner">
-        <img src="https://drive.google.com/uc?id=1EMmWCa-GvvU9rf1qMSDTzk9NSdUKYfqC" alt="CololaFest - 100 años de Colola" class="banner-img"> <!-- Enlace directo a la imagen del banner -->
-    </section>
-
-    <div class="map" id="map"></div>
-    <div class="weather">
-        <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=15817747&language=es&region=AR&timeFormat=HH:mm&windUnit=kmh&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="318" height="318" frameborder="0" style="border: 1px solid #003959; border-radius: 14px;"></iframe>
-    </div>
-
     <div class="section" id="sobre-colola">
         <h2>Sobre Colola</h2>
         <p>María Cornelia Méndez Casariego de Arigós, cariñosamente llamada Colola, fue una mujer que supo transformar cada etapa de su vida en un espacio de creación y aprendizaje. Nacida en el seno de la familia Méndez Casariego y unida en matrimonio a Ramón Eduardo Arigós Lucero, con quien formó su hogar y familia, Colola cultivó no solo el amor por los suyos, sino también una profunda sensibilidad artística que la acompañó siempre.</p>
