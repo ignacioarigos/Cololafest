@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colola Fest 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-image: url('ruta/a/tu/foto-de-portada.jpg');
+            background-size: cover;
+            height: 400px;
+            position: relative;
+            color: white;
+        }
+        h1 {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        #countdown {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+        }
+        .map, .weather {
+            width: 100%;
+            height: 300px;
+            margin: 20px 0;
+        }
+        .section {
+            margin: 20px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Colola Fest 2025</h1>
+    <div id="countdown"></div>
+</header>
+
+<nav>
+    <a href="#confirmar-asistencia">Confirmar Asistencia</a>
+    <a href="#lista-asistentes">Lista de Asistentes</a>
+    <a href="#poesias">Poesías</a>
+    <a href="#fotos">Fotos</a>
+</nav>
+
+<div class="content">
+    <div class="map" id="map"></div>
+    <div class="weather">
+        <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=15817747&language=es&region=AR&timeFormat=HH:mm&windUnit=kmh&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="318" height="318" frameborder="0" style="border: 1px solid #003959;border-radius: 14px"></iframe>
+    </div>
+
+    <div class="section" id="sobre-colola">
+        <h2>Sobre Colola</h2>
+        <p>María Cornelia Méndez Casariego de Arigós, cariñosamente llamada Colola, fue una mujer que supo transformar cada etapa de su vida en un espacio de creación y aprendizaje. Nacida en el seno de la familia Méndez Casariego y unida en matrimonio a Ramón Eduardo Arigós Lucero, con quien formó su hogar y familia, Colola cultivó no solo el amor por los suyos, sino también una profunda sensibilidad artística que la acompañó siempre.</p>
+        <p>A lo largo de su vida, dejó huellas imborrables en la literatura: autora de tres libros de poesía y de diversos relatos narrativos, exploró con delicadeza los matices de la existencia, los vínculos y la memoria. Su talento fue reconocido públicamente en 1998, cuando recibió el Primer Premio de Poesía de la Municipalidad de La Plata en el marco del certamen Abuelos Bonaerenses, gracias a su poema “La Vejez”, una obra que refleja con serenidad, ternura y lucidez la última etapa de la vida.</p>
+        <p>Lejos de conformarse con lo alcanzado, Colola continuó participando activamente en espacios de formación y crecimiento personal. A los 74 años integró el Programa de Educación Permanente para Adultos Mayores de la Facultad de Humanidades y Ciencias de la Educación (UNLP), demostrando que la búsqueda del conocimiento y la expresión artística no tienen edad.</p>
+        <p>Hoy, su legado permanece vivo no solo en su obra escrita, sino también en el recuerdo de quienes compartieron con ella la calidez de su palabra y la claridad de su mirada. Colola Méndez Casariego de Arigós es, en definitiva, un ejemplo de cómo la poesía puede ser compañía, testimonio y herencia.</p>
+    </div>
+
+    <div class="section" id="sobre-evento">
+        <h2>Sobre el Evento</h2>
+        <p>100 años de Colola — Una vida que sigue iluminando</p>
+        <p>Este 21 de septiembre de 2025 se cumplen 100 años del nacimiento de Colola, y queremos celebrarlo como a ella le hubiese gustado: juntos, en familia, compartiendo mesa, música, risas y recuerdos.</p>
+        <p>Será un día especial para honrar su vida, su legado y la huella que dejó en cada uno de nosotros. Una oportunidad para volver a encontrarnos, brindar por la memoria de Colola y, sobre todo, para celebrar la unión que ella siempre supo sembrar.</p>
+        <p>📅 Cuándo: Domingo 21 de septiembre de 2025</p>
+        <p>📍 Dónde: [indicar lugar]</p>
+        <p>🎶 Qué haremos: Compartiremos una comida familiar, recordaremos a Colola, leeremos algunos de sus versos, cantaremos y festejaremos juntos.</p>
+        <p>Los invitamos con el corazón abierto a ser parte de este homenaje lleno de alegría, gratitud y amor. Porque 100 años no son solo un número: son una vida entera que nos sigue inspirando.</p>
+    </div>
+</div>
+
+<script>
+    // Countdown to the event date
+    const eventDate = new Date('2025-09-21T00:00:00').getTime();
+    const countdownElement = document.getElementById('countdown');
+
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+
+        if (distance < 0) {
+            clearInterval(countdown);
+            countdownElement.innerHTML = "¡El evento ha comenzado!";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
