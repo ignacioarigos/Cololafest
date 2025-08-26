@@ -6,10 +6,12 @@
     <title>Colola Fest 2025</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
+            background-color: #f4f4f4; /* Color de fondo suave */
+            color: #333; /* Color de texto */
         }
         header {
             background-image: url('https://drive.google.com/uc?id=1EMmWCa-GvvU9rf1qMSDTzk9NSdUKYfqC'); /* Enlace directo a la imagen de portada */
@@ -17,20 +19,26 @@
             height: 300px; /* Altura de la portada */
             position: relative;
             color: white;
+            display: flex;
+            align-items: flex-end; /* Alinear el texto al fondo */
+            justify-content: center; /* Centrar horizontalmente */
+            padding: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para el texto */
         }
         h1 {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
+            font-size: 2.5em; /* Tamaño de fuente más grande */
+            margin: 0;
         }
         nav {
             background-color: #333;
-            padding: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para el menú */
         }
         nav a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            font-weight: bold; /* Negrita para los enlaces */
         }
         nav a:hover {
             text-decoration: underline;
@@ -42,10 +50,16 @@
             width: 100%;
             height: 300px;
             margin: 20px 0;
+            border-radius: 10px; /* Bordes redondeados */
+            overflow: hidden; /* Esconder el desbordamiento */
         }
         .section {
             margin: 20px 0;
             text-align: left;
+            background-color: white; /* Fondo blanco para secciones */
+            padding: 20px;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
         }
         .banner {
             width: 100%;
@@ -56,6 +70,7 @@
             height: auto;
             max-height: 200px; /* controla la altura (3–5 cm aprox.) */
             object-fit: cover;
+            border-radius: 10px; /* Bordes redondeados */
         }
         .countdown {
             position: absolute;
@@ -65,6 +80,15 @@
             color: white;
             padding: 10px;
             border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para el countdown */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -113,6 +137,10 @@
         <p>Los invitamos con el corazón abierto a ser parte de este homenaje lleno de alegría, gratitud y amor. Porque 100 años no son solo un número: son una vida entera que nos sigue inspirando.</p>
     </div>
 </div>
+
+<footer>
+    <p>&copy; 2025 Colola Fest. Todos los derechos reservados.</p>
+</footer>
 
 <script>
     // Countdown to the event date
