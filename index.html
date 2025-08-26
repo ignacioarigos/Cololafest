@@ -14,7 +14,7 @@
         header {
             background-image: url('ruta/a/tu/foto-de-portada.jpg');
             background-size: cover;
-            height: 400px;
+            height: 3cm; /* Altura de la portada ajustada a 3 cm */
             position: relative;
             color: white;
         }
@@ -22,10 +22,6 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
-        }
-        #countdown {
-            font-size: 2em;
-            margin-top: 20px;
         }
         nav {
             background-color: #333;
@@ -51,14 +47,28 @@
             margin: 20px 0;
             text-align: left;
         }
+        .banner {
+            width: 100%;
+            overflow: hidden;
+        }
+        .banner-img {
+            width: 100%;
+            height: auto;
+            max-height: 200px; /* controla la altura (3–5 cm aprox.) */
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Colola Fest 2025</h1>
-    <div id="countdown"></div>
 </header>
+
+<!-- Widget de cuenta regresiva -->
+<div>
+    <iframe src="https://countingdownto.com/?c=6517647" width="100%" height="100" frameborder="0"></iframe>
+</div>
 
 <nav>
     <a href="#confirmar-asistencia">Confirmar Asistencia</a>
@@ -67,10 +77,14 @@
     <a href="#fotos">Fotos</a>
 </nav>
 
+<section class="banner">
+    <img src="cololafest-banner.png" alt="CololaFest - 100 años de Colola" class="banner-img">
+</section>
+
 <div class="content">
     <div class="map" id="map"></div>
     <div class="weather">
-        <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=15817747&language=es&region=AR&timeFormat=HH:mm&windUnit=kmh&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="318" height="318" frameborder="0" style="border: 1px solid #003959;border-radius: 14px"></iframe>
+        <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=15817747&language=es&region=AR&timeFormat=HH:mm&windUnit=kmh&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="318" height="318" frameborder="0" style="border: 1px solid #003959; border-radius: 14px;"></iframe>
     </div>
 
     <div class="section" id="sobre-colola">
