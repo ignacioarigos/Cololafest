@@ -12,9 +12,9 @@
             text-align: center;
         }
         header {
-            background-image: url('ruta/a/tu/foto-de-portada.jpg'); /* Reemplaza con la ruta de la imagen descargada */
+            background-image: url('https://drive.google.com/uc?id=1EMmWCa-GvvU9rf1qMSDTzk9NSdUKYfqC'); /* Enlace directo a la imagen de portada */
             background-size: cover;
-            height: 3cm; /* Altura de la portada ajustada a 3 cm */
+            height: 300px; /* Altura de la portada */
             position: relative;
             color: white;
         }
@@ -57,18 +57,25 @@
             max-height: 200px; /* controla la altura (3–5 cm aprox.) */
             object-fit: cover;
         }
+        .countdown {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Colola Fest 2025</h1>
+    <div class="countdown">
+        <iframe width="300" height="154" src="https://w2.countingdownto.com/6517665" frameborder="0"></iframe>
+    </div>
 </header>
-
-<!-- Widget de cuenta regresiva -->
-<div>
-    <iframe width="300" height="154" src="https://w2.countingdownto.com/6517665" frameborder="0"></iframe>
-</div>
 
 <nav>
     <a href="#confirmar-asistencia">Confirmar Asistencia</a>
@@ -77,11 +84,11 @@
     <a href="#fotos">Fotos</a>
 </nav>
 
-<section class="banner">
-    <img src="cololafest-banner.png" alt="CololaFest - 100 años de Colola" class="banner-img"> <!-- Asegúrate de que esta imagen esté en la ubicación correcta -->
-</section>
-
 <div class="content">
+    <section class="banner">
+        <img src="cololafest-banner.png" alt="CololaFest - 100 años de Colola" class="banner-img"> <!-- Asegúrate de que esta imagen esté en la ubicación correcta -->
+    </section>
+
     <div class="map" id="map"></div>
     <div class="weather">
         <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=15817747&language=es&region=AR&timeFormat=HH:mm&windUnit=kmh&systemOfMeasurement=metric&temperatureUnit=celsius" name="CW2" scrolling="no" width="318" height="318" frameborder="0" style="border: 1px solid #003959; border-radius: 14px;"></iframe>
