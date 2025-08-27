@@ -17,7 +17,8 @@
             background-image: url('https://drive.google.com/uc?id=1EMmWCa-GvvU9rf1qMSDTzk9NSdUKYfqC');
             background-size: cover;
             background-position: center;
-            height: 3.5cm; /* Ajusta aquí entre 3 y 4 cm */
+            height: 3.5cm;
+            position: relative; /* Para ubicar el countdown */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -29,6 +30,16 @@
         header h1 {
             font-size: 2em;
             margin: 0;
+        }
+
+        /* Countdown en esquina */
+        .countdown {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 8px;
+            border-radius: 6px;
         }
 
         /* ===== NAV ===== */
@@ -77,6 +88,9 @@
 
 <header>
     <h1>Colola Fest 2025</h1>
+    <div class="countdown">
+        <iframe width="200" height="80" src="https://w2.countingdownto.com/6517665" frameborder="0"></iframe>
+    </div>
 </header>
 
 <nav>
@@ -90,12 +104,12 @@
 <div class="content">
     <div class="section" id="sobre-colola">
         <h2>Sobre Colola</h2>
-        <p>María Cornelia Méndez Casariego de Arigós, conocida como Colola...</p>
+        <p>Texto sobre la vida y obra de Colola...</p>
     </div>
 
     <div class="section" id="sobre-evento">
         <h2>Sobre el Evento</h2>
-        <p>100 años de Colola — Una vida que sigue iluminando...</p>
+        <p>Detalles del evento...</p>
     </div>
 </div>
 
