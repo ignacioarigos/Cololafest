@@ -2,187 +2,108 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Colola Fest 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CololaFest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    /* ===== BANNER CON BANDAS ===== */
-    header {
-      background-image: url('https://i.imgur.com/vcVviAM.jpeg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: #000;
-      height: 3.5cm;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 10px;
-      box-sizing: border-box;
-    }
-
-    /* Countdown */
-    .countdown {
-      background: rgba(0,0,0,0.6);
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000; /* o imagen de fondo en .hero */
       color: white;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 1em;
-      font-weight: bold;
-      text-align: center;
-      min-width: 200px;
     }
 
-    /* Widget clima */
-    .weather-widget {
-      width: 320px;
-      height: 150px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      padding: 12px;
-      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-size: 0.9rem;
-    }
-    .weather-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .weather-header h2 {
-      margin: 0;
-      font-size: 1rem;
-    }
-    .current-weather {
-      font-size: 1.4rem;
-      font-weight: bold;
-    }
-    .forecast {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 6px;
-    }
-    .forecast-day {
-      flex: 1;
+    .hero {
       text-align: center;
-      font-size: 0.8rem;
-    }
-    .forecast-day span {
-      display: block;
+      padding: 3rem 1rem;
+      background: url('banner.jpg') center/cover no-repeat;
+      background-color: rgba(0,0,0,0.4); /* fallback oscuro */
     }
 
-    /* NAV */
-    nav {
-      background-color: #333;
-      padding: 0.6em 0;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    .evento-titulo {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
+
+    #countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 1.3rem;
       font-weight: bold;
+      margin-bottom: 1.5rem;
     }
-    nav a:hover {
+
+    #countdown div {
+      text-align: center;
+    }
+
+    #countdown span {
+      font-size: 2rem;
       color: #ffd700;
     }
 
-    /* CONTENIDO */
-    .content {
-      padding: 20px;
-    }
-    .section {
-      margin: 20px auto;
-      max-width: 900px;
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    #weather {
+      margin-top: 1rem;
     }
 
-    /* FOOTER */
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 10px;
-      text-align: center;
+    /* Opcional: adaptar enlace del clima al estilo general */
+    .weatherwidget-io {
+      display: inline-block;
+      margin: 0 auto;
+      text-decoration: none;
+      border-radius: 8px;
+      overflow: hidden;
     }
   </style>
 </head>
 <body>
-
-<header>
-  <!-- Countdown -->
-  <div class="countdown" id="countdown"></div>
-
-  <!-- Widget del clima -->
-  <div class="weather-widget" id="weather-widget">
-    <div class="weather-header">
-      <h2>Clima en Lobos</h2>
-      <div id="current-temp" class="current-weather">--°C</div>
+  <section class="hero">
+    <h1 class="evento-titulo">CololaFest</h1>
+    <div id="countdown">
+      <div><span id="days"></span><br>días</div>
+      <div><span id="hours"></span><br>horas</div>
+      <div><span id="minutes"></span><br>minutos</div>
+      <div><span id="seconds"></span><br>segundos</div>
     </div>
-    <div id="current-details">Cargando...</div>
-    <div class="forecast" id="forecast"></div>
-  </div>
-</header>
-
-<nav>
-  <a href="#confirmar-asistencia">Confirmar Asistencia</a>
-  <a href="#lista-asistentes">Lista de Asistentes</a>
-  <a href="#poesias">Poesías</a>
-  <a href="#fotos">Fotos</a>
-  <a href="comollegar.html">Cómo llegar</a>
-</nav>
-
-<div class="content">
-  <div class="section" id="sobre-colola">
-    <h2>Sobre Colola</h2>
-    <p>María Cornelia Méndez Casariego de Arigós, cariñosamente llamada Colola, fue una mujer que supo transformar cada etapa de su vida en un espacio de creación y aprendizaje. Nacida en el seno de la familia Méndez Casariego y unida en matrimonio a Ramón Eduardo Arigós Lucero, con quien formó su hogar y familia, Colola cultivó no solo el amor por los suyos, sino también una profunda sensibilidad artística que la acompañó siempre.</p>
-    <p>A lo largo de su vida, dejó huellas imborrables en la literatura: autora de tres libros de poesía y de diversos relatos narrativos, exploró con delicadeza los matices de la existencia, los vínculos y la memoria. Su talento fue reconocido públicamente en 1998, cuando recibió el Primer Premio de Poesía de la Municipalidad de La Plata en el marco del certamen Abuelos Bonaerenses, gracias a su poema “La Vejez”, una obra que refleja con serenidad, ternura y lucidez la última etapa de la vida.</p>
-    <p>Lejos de conformarse con lo alcanzado, Colola continuó participando activamente en espacios de formación y crecimiento personal. A los 74 años integró el Programa de Educación Permanente para Adultos Mayores de la Facultad de Humanidades y Ciencias de la Educación (UNLP), demostrando que la búsqueda del conocimiento y la expresión artística no tienen edad.</p>
-    <p>Hoy, su legado permanece vivo no solo en su obra escrita, sino también en el recuerdo de quienes compartieron con ella la calidez de su palabra y la claridad de su mirada. Colola Méndez Casariego de Arigós es, en definitiva, un ejemplo de cómo la poesía puede ser compañía, testimonio y herencia.</p>
-  </div>
-
-  <div class="section" id="sobre-evento">
-    <h2>Sobre el Evento</h2>
-    <p>100 años de Colola — Una vida que sigue iluminando</p>
-    <p>Este 21 de septiembre de 2025 se cumplen 100 años del nacimiento de Colola, y queremos celebrarlo como a ella le hubiese gustado: juntos, en familia, compartiendo mesa, música, risas y recuerdos.</p>
-    <p>Será un día especial para honrar su vida, su legado y la huella que dejó en cada uno de nosotros. Una oportunidad para volver a encontrarnos, brindar por la memoria de Colola y, sobre todo, para celebrar la unión que ella siempre supo sembrar.</p>
-    <p>📅 Cuándo: Domingo 21 de septiembre de 2025</p>
-    <p>📍 Dónde: <a href="https://maps.app.goo.gl/HtFKLhpcXT7fLKc76" target="_blank" rel="noopener noreferrer">Mapa del lugar</a></p>
-    <p>🎶 Qué haremos: Compartiremos una comida familiar, recordaremos a Colola, leeremos algunos de sus versos, cantaremos y festejaremos juntos.</p>
-    <p>Los invitamos con el corazón abierto a ser parte de este homenaje lleno de alegría, gratitud y amor. Porque 100 años no son solo un número: son una vida entera que nos sigue inspirando.</p>
-  </div>
-</div>
-
-<footer>
-  <p>&copy; 2025 Colola Fest. Todos los derechos reservados.</p>
-</footer>
-
+    <div id="weather">
+      <a class="weatherwidget-io" href="https://forecast7.com/es/n35d19n59d10/lobos/" data-label_1="LOBOS" data-label_2="WEATHER" data-theme="original" >LOBOS WEATHER</a>
 <script>
-  // Countdown al 21/09/2025
-  const countdownElement = document.getElementById('countdown');
-  const eventDate = new Date('2025-09-21T00:00:00').getTime();
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+</div>
+  </section>
 
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
+  <script>
+    // Countdown
+    const eventDate = new Date("Sep 21, 2025 12:00:00").getTime();
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
 
-    if (distance <= 0) {
-      countdownElement.textContent = "¡El evento ha comenzado!";
-      return;
+      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "¡El evento ha comenzado!";
+      }
+    }, 1000);
+  </script>
+
+  <!-- Script del widget de clima -->
+  <script>
+  !function(d,s,id){
+    var js,fjs=d.getElementsByTagName(s)[0];
+    if(!d.getElementById(id)){
+      js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+      fjs.parentNode.insertBefore(js,fjs);
     }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (
+  }(document,'script','weatherwidget-io-js');
+  </script>
+</body>
+</html>
