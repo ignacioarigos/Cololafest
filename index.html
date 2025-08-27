@@ -14,11 +14,11 @@
 
         /* ===== PORTADA ===== */
         header {
-            background-image: url('https://drive.google.com/uc?id=1EMmWCa-GvvU9rf1qMSDTzk9NSdUKYfqC');
+            background-image: url('https://i.imgur.com/t6Jjk9s.jpeg');
             background-size: cover;
             background-position: center;
             height: 3.5cm;
-            position: relative; /* Para ubicar el countdown */
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -32,14 +32,20 @@
             margin: 0;
         }
 
-        /* Countdown en esquina */
+        /* Countdown más pequeño y proporcionado */
         .countdown {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 8px;
+            top: 8px;
+            left: 8px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 5px;
             border-radius: 6px;
+        }
+
+        .countdown iframe {
+            width: 160px;
+            height: 60px;
+            border: none;
         }
 
         /* ===== NAV ===== */
@@ -89,7 +95,7 @@
 <header>
     <h1>Colola Fest 2025</h1>
     <div class="countdown">
-        <iframe width="200" height="80" src="https://w2.countingdownto.com/6517665" frameborder="0"></iframe>
+        <iframe src="https://w2.countingdownto.com/6517665"></iframe>
     </div>
 </header>
 
