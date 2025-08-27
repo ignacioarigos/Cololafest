@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Colola Fest 2025</title>
 
-  <!-- CommonNinja (countdown) -->
+  <!-- Script del countdown -->
   <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
 
   <style>
@@ -16,36 +16,29 @@
       color: #333;
     }
 
-    /* ===== BANNER =====
-       - Usamos background-size: contain para que se vea ENTERA la imagen (y se lean las letras).
-       - Se agregan “letterboxes” (bandas) con background-color si la relación de aspecto no coincide.
-    */
+    /* ===== BANNER ===== */
     header {
-      background-image: url('https://i.imgur.com/vcVviAM.jpeg'); /* directo desde el álbum que pasaste */
-      background-size: contain;      /* muestra la imagen completa sin recortarla */
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: #000;        /* bandas discretas para que el texto del banner sea legible */
-      height: 3.5cm;                 /* franja de 3–4 cm (ajustable) */
+      background-image: url('https://i.imgur.com/vcVviAM.jpeg'); /* enlace directo */
+      background-size: cover;       /* ocupa todo el espacio, sin bandas */
+      background-position: center;  /* centra la parte importante */
+      height: 3.5cm;
       position: relative;
-      overflow: hidden;
     }
 
-    /* Contenedor del countdown: ancho mayor que alto para forzar orientación horizontal */
+    /* Contenedor del countdown */
     .countdown {
       position: absolute;
       top: 8px;
       left: 8px;
-      width: 320px;   /* más ancho para maquetar horizontal */
-      height: 74px;   /* bajo para que entre en la franja */
-      padding: 4px;
+      width: 320px;   /* ancho suficiente para que se vea horizontal */
+      height: 74px;   /* altura baja para que encaje en el banner */
+      background: rgba(0,0,0,0.25);
       border-radius: 8px;
-      background: rgba(0,0,0,0.25); /* ayuda a la legibilidad sobre la imagen */
       box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      padding: 4px;
       overflow: hidden;
     }
 
-    /* El widget ocupa todo el contenedor definido arriba */
     .countdown .commonninja_component {
       width: 100%;
       height: 100%;
@@ -95,7 +88,7 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
-      header { height: 3cm; }              /* un poco más bajo en móvil */
+      header { height: 3cm; }
       .countdown {
         width: 260px;
         height: 60px;
@@ -146,4 +139,3 @@
 
 </body>
 </html>
-
