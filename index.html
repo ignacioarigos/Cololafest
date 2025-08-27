@@ -1,119 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colola Fest 2025</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colola Fest 2025</title>
 
-        /* ===== BANNER ===== */
-        header {
-            background-image: url('https://i.imgur.com/vcVviAM.jpeg'); /* enlace directo de la imagen */
-            background-size: cover;
-            background-position: center;
-            height: 3.5cm;
-            position: relative;
-        }
+  <!-- CommonNinja (countdown) -->
+  <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
 
-        /* Countdown */
-        .countdown {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            width: 220px;
-            height: 80px;
-            max-width: 90%;
-        }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-        /* ===== NAV ===== */
-        nav {
-            background-color: #333;
-            padding: 0.6em 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+    /* ===== BANNER =====
+       - Usamos background-size: contain para que se vea ENTERA la imagen (y se lean las letras).
+       - Se agregan “letterboxes” (bandas) con background-color si la relación de aspecto no coincide.
+    */
+    header {
+      background-image: url('https://i.imgur.com/vcVviAM.jpeg'); /* directo desde el álbum que pasaste */
+      background-size: contain;      /* muestra la imagen completa sin recortarla */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #000;        /* bandas discretas para que el texto del banner sea legible */
+      height: 3.5cm;                 /* franja de 3–4 cm (ajustable) */
+      position: relative;
+      overflow: hidden;
+    }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    /* Contenedor del countdown: ancho mayor que alto para forzar orientación horizontal */
+    .countdown {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 320px;   /* más ancho para maquetar horizontal */
+      height: 74px;   /* bajo para que entre en la franja */
+      padding: 4px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.25); /* ayuda a la legibilidad sobre la imagen */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
 
-        nav a:hover {
-            color: #ffd700;
-        }
+    /* El widget ocupa todo el contenedor definido arriba */
+    .countdown .commonninja_component {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
 
-        /* ===== CONTENIDO ===== */
-        .content {
-            padding: 20px;
-        }
+    /* ===== NAV ===== */
+    nav {
+      background-color: #333;
+      padding: 0.6em 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
 
-        .section {
-            margin: 20px auto;
-            max-width: 900px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        /* ===== FOOTER ===== */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-    <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    /* ===== CONTENIDO ===== */
+    .content {
+      padding: 20px;
+    }
+
+    .section {
+      margin: 20px auto;
+      max-width: 900px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      header { height: 3cm; }              /* un poco más bajo en móvil */
+      .countdown {
+        width: 260px;
+        height: 60px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
+  <header>
     <div class="countdown">
-        <div class="commonninja_component pid-c568543c-f253-4bf2-9872-3c85567e730d"></div>
+      <div class="commonninja_component pid-c568543c-f253-4bf2-9872-3c85567e730d"></div>
     </div>
-</header>
+  </header>
 
-<nav>
+  <nav>
     <a href="#confirmar-asistencia">Confirmar Asistencia</a>
     <a href="#lista-asistentes">Lista de Asistentes</a>
     <a href="#poesias">Poesías</a>
     <a href="#fotos">Fotos</a>
     <a href="comollegar.html">Cómo llegar</a>
-</nav>
+  </nav>
 
-<div class="content">
+  <div class="content">
     <div class="section" id="sobre-colola">
-        <h2>Sobre Colola</h2>
-        <p>María Cornelia Méndez Casariego de Arigós, cariñosamente llamada Colola, fue una mujer que supo transformar cada etapa de su vida en un espacio de creación y aprendizaje. Nacida en el seno de la familia Méndez Casariego y unida en matrimonio a Ramón Eduardo Arigós Lucero, con quien formó su hogar y familia, Colola cultivó no solo el amor por los suyos, sino también una profunda sensibilidad artística que la acompañó siempre.</p>
-        <p>A lo largo de su vida, dejó huellas imborrables en la literatura: autora de tres libros de poesía y de diversos relatos narrativos, exploró con delicadeza los matices de la existencia, los vínculos y la memoria. Su talento fue reconocido públicamente en 1998, cuando recibió el Primer Premio de Poesía de la Municipalidad de La Plata en el marco del certamen Abuelos Bonaerenses, gracias a su poema “La Vejez”, una obra que refleja con serenidad, ternura y lucidez la última etapa de la vida.</p>
-        <p>Lejos de conformarse con lo alcanzado, Colola continuó participando activamente en espacios de formación y crecimiento personal. A los 74 años integró el Programa de Educación Permanente para Adultos Mayores de la Facultad de Humanidades y Ciencias de la Educación (UNLP), demostrando que la búsqueda del conocimiento y la expresión artística no tienen edad.</p>
-        <p>Hoy, su legado permanece vivo no solo en su obra escrita, sino también en el recuerdo de quienes compartieron con ella la calidez de su palabra y la claridad de su mirada. Colola Méndez Casariego de Arigós es, en definitiva, un ejemplo de cómo la poesía puede ser compañía, testimonio y herencia.</p>
+      <h2>Sobre Colola</h2>
+      <p>María Cornelia Méndez Casariego de Arigós, cariñosamente llamada Colola, fue una mujer que supo transformar cada etapa de su vida en un espacio de creación y aprendizaje. Nacida en el seno de la familia Méndez Casariego y unida en matrimonio a Ramón Eduardo Arigós Lucero, con quien formó su hogar y familia, Colola cultivó no solo el amor por los suyos, sino también una profunda sensibilidad artística que la acompañó siempre.</p>
+      <p>A lo largo de su vida, dejó huellas imborrables en la literatura: autora de tres libros de poesía y de diversos relatos narrativos, exploró con delicadeza los matices de la existencia, los vínculos y la memoria. Su talento fue reconocido públicamente en 1998, cuando recibió el Primer Premio de Poesía de la Municipalidad de La Plata en el marco del certamen Abuelos Bonaerenses, gracias a su poema “La Vejez”, una obra que refleja con serenidad, ternura y lucidez la última etapa de la vida.</p>
+      <p>Lejos de conformarse con lo alcanzado, Colola continuó participando activamente en espacios de formación y crecimiento personal. A los 74 años integró el Programa de Educación Permanente para Adultos Mayores de la Facultad de Humanidades y Ciencias de la Educación (UNLP), demostrando que la búsqueda del conocimiento y la expresión artística no tienen edad.</p>
+      <p>Hoy, su legado permanece vivo no solo en su obra escrita, sino también en el recuerdo de quienes compartieron con ella la calidez de su palabra y la claridad de su mirada. Colola Méndez Casariego de Arigós es, en definitiva, un ejemplo de cómo la poesía puede ser compañía, testimonio y herencia.</p>
     </div>
 
     <div class="section" id="sobre-evento">
-        <h2>Sobre el Evento</h2>
-        <p>100 años de Colola — Una vida que sigue iluminando</p>
-        <p>Este 21 de septiembre de 2025 se cumplen 100 años del nacimiento de Colola, y queremos celebrarlo como a ella le hubiese gustado: juntos, en familia, compartiendo mesa, música, risas y recuerdos.</p>
-        <p>Será un día especial para honrar su vida, su legado y la huella que dejó en cada uno de nosotros. Una oportunidad para volver a encontrarnos, brindar por la memoria de Colola y, sobre todo, para celebrar la unión que ella siempre supo sembrar.</p>
-        <p>📅 Cuándo: Domingo 21 de septiembre de 2025</p>
-        <p>📍 Dónde: <a href="https://maps.app.goo.gl/yEhLCwmbkLu91emz6" target="_blank">Mapa del lugar</a></p>
-        <p>🎶 Qué haremos: Compartiremos una comida familiar, recordaremos a Colola, leeremos algunos de sus versos, cantaremos y festejaremos juntos.</p>
-        <p>Los invitamos con el corazón abierto a ser parte de este homenaje lleno de alegría, gratitud y amor. Porque 100 años no son solo un número: son una vida entera que nos sigue inspirando.</p>
+      <h2>Sobre el Evento</h2>
+      <p>100 años de Colola — Una vida que sigue iluminando</p>
+      <p>Este 21 de septiembre de 2025 se cumplen 100 años del nacimiento de Colola, y queremos celebrarlo como a ella le hubiese gustado: juntos, en familia, compartiendo mesa, música, risas y recuerdos.</p>
+      <p>Será un día especial para honrar su vida, su legado y la huella que dejó en cada uno de nosotros. Una oportunidad para volver a encontrarnos, brindar por la memoria de Colola y, sobre todo, para celebrar la unión que ella siempre supo sembrar.</p>
+      <p>📅 Cuándo: Domingo 21 de septiembre de 2025</p>
+      <p>📍 Dónde: <a href="https://maps.app.goo.gl/yEhLCwmbkLu91emz6" target="_blank" rel="noopener noreferrer">Mapa del lugar</a></p>
+      <p>🎶 Qué haremos: Compartiremos una comida familiar, recordaremos a Colola, leeremos algunos de sus versos, cantaremos y festejaremos juntos.</p>
+      <p>Los invitamos con el corazón abierto a ser parte de este homenaje lleno de alegría, gratitud y amor. Porque 100 años no son solo un número: son una vida entera que nos sigue inspirando.</p>
     </div>
-</div>
+  </div>
 
-<footer>
+  <footer>
     <p>&copy; 2025 Colola Fest. Todos los derechos reservados.</p>
-</footer>
+  </footer>
 
 </body>
 </html>
