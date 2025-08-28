@@ -15,33 +15,33 @@
 
   /* CABECERA */
   .top-bar {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    justify-content: center; /* centra horizontalmente contenido */
     background: rgba(0,0,0,0.85);
-    padding: 0 1rem;
     height: 3.5cm;
+    padding: 0 1rem;
     box-sizing: border-box;
-    gap: 2rem; /* espacio entre countdown y banner */
   }
 
   .countdown {
     display: flex;
     gap: 1rem;
+    justify-content: flex-start;
     font-weight: bold;
     text-align: center;
   }
 
   .countdown span {
     font-size: 1.5rem;
-    color: #C71585;
+    color: #C71585; /* rosa/violeta */
   }
 
   .banner-central {
-    height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
   .banner-central img {
@@ -81,9 +81,13 @@
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .top-bar {
-      flex-direction: column;
+      grid-template-columns: 1fr;
       height: auto;
       padding: 1rem;
+    }
+    .countdown {
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .banner-central img {
       width: 100%;
@@ -96,12 +100,14 @@
 
 <!-- PORTADA SUPERIOR -->
 <section class="top-bar">
+  <!-- Countdown a la izquierda -->
   <div class="countdown">
     <div><span id="days"></span><br>días</div>
     <div><span id="hours"></span><br>horas</div>
     <div><span id="minutes"></span><br>min</div>
     <div><span id="seconds"></span><br>seg</div>
   </div>
+  <!-- Banner centrado -->
   <div class="banner-central">
     <img src="https://raw.githubusercontent.com/ignacioarigos/Cololafest/main/Banner.PNG" alt="CololaFest - 100 Años de Colola">
   </div>
