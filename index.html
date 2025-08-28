@@ -1,144 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CololaFest</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #fff;
-    color: #333;
-  }
-  .top-bar {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 1rem;
-    background: rgba(0,0,0,0.85);
-    padding: 0.5rem;
-    color: white;
-  }
-  .countdown {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-  }
-  .countdown span {
-    font-size: 1.5rem;
-    color: #ffd700;
-  }
-  .banner-central img {
-    height: 3.5cm;
-    display: block;
-    margin: 0 auto;
-    border-radius: 6px;
-  }
-  .clima {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  nav {
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  nav a {
-    color: white;
-    padding: 1rem;
-    text-decoration: none;
-  }
-  nav a:hover {
-    background-color: #555;
-  }
-  .section {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-  }
-  .section h2 {
-    color: #c44;
-  }
-  @media (max-width: 768px) {
-    .top-bar {
-      grid-template-columns: 1fr;
-    }
-    .countdown {
-      flex-wrap: wrap;
-    }
-  }
-</style>
-</head>
-<body>
-
-<section class="top-bar">
-  <!-- Countdown -->
-  <div class="countdown">
-    <div><span id="days"></span><br>días</div>
-    <div><span id="hours"></span><br>horas</div>
-    <div><span id="minutes"></span><br>min</div>
-    <div><span id="seconds"></span><br>seg</div>
-  </div>
-
-  <!-- Banner -->
-  <div class="banner-central">
-    <img src="https://i.imgur.com/0ysWYvR.png" alt="CololaFest - 100 Años de Colola">
-  </div>
-
-  <!-- Clima -->
-  <div class="clima">
-    <a class="weatherwidget-io" href="https://forecast7.com/es/n35d19n59d10/lobos/" 
-       data-label_1="LOBOS" data-font="Arial" data-icons="Climacons" 
-       data-days="3" data-theme="weather_one">LOBOS</a>
-  </div>
-</section>
-
-<nav>
-  <a href="#confirmar-asistencia">Confirmar Asistencia</a>
-  <a href="#lista-asistentes">Lista de Asistentes</a>
-  <a href="#poesias">Poesías</a>
-  <a href="#fotos">Fotos</a>
-</nav>
-
-<div class="section" id="sobre-colola">
-  <h2>Sobre Colola</h2>
-  <p>María Cornelia Méndez Casariego de Arigós, cariñosamente llamada Colola, fue una mujer que supo transformar cada etapa de su vida en un espacio de creación y aprendizaje...</p>
-</div>
-
-<div class="section" id="sobre-evento">
-  <h2>Sobre el Evento</h2>
-  <p>100 años de Colola — Una vida que sigue iluminando...</p>
-</div>
-
-<script>
-  const eventDate = new Date("Sep 21, 2025 12:00:00").getTime();
-  setInterval(function(){
-    const now = new Date().getTime();
-    const dist = eventDate - now;
-    document.getElementById("days").innerText = Math.floor(dist / (1000*60*60*24));
-    document.getElementById("hours").innerText = Math.floor((dist % (1000*60*60*24)) / (1000*60*60));
-    document.getElementById("minutes").innerText = Math.floor((dist % (1000*60*60)) / (1000*60));
-    document.getElementById("seconds").innerText = Math.floor((dist % (1000*60)) / 1000);
-    if(dist < 0){
-      document.querySelector(".countdown").innerHTML = "¡El evento ha comenzado!";
-    }
-  },1000);
-</script>
-<script>
-!function(d,s,id){
-  var js,fjs=d.getElementsByTagName(s)[0];
-  if(!d.getElementById(id)){
-    js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
-    fjs.parentNode.insertBefore(js,fjs);
-  }
-}(document,'script','weatherwidget-io-js');
-</script>
-
-</body>
-</html>
+.top-bar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0,0,0,0.85);
+  padding: 0.5rem;
+  color: white;
+}
+.countdown {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.countdown span {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+.banner-central img {
+  height: 3.5cm;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+.clima {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* recorta si es muy ancho */
+  max-width: 200px;
+}
