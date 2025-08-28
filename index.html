@@ -15,9 +15,10 @@
 
   /* CABECERA */
   .top-bar {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
     align-items: center;
+    justify-content: center; /* el banner quedará centrado globalmente */
+    position: relative; /* para colocar countdown fijo a la izquierda */
     background: rgba(0,0,0,0.85);
     height: 3.5cm;
     padding: 0 1rem;
@@ -25,9 +26,10 @@
   }
 
   .countdown {
+    position: absolute;
+    left: 1rem;
     display: flex;
     gap: 1rem;
-    justify-content: flex-start; /* alineado a la izquierda */
     font-weight: bold;
     text-align: center;
   }
@@ -38,10 +40,10 @@
   }
 
   .banner-central {
-    display: flex;
-    justify-content: center; /* centrado en su columna */
-    align-items: center;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .banner-central img {
@@ -76,17 +78,20 @@
   }
   .section h2 {
     color: #c44;
+    font-family: 'Playfair Display', serif;
   }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .top-bar {
-      grid-template-columns: 1fr;
+      flex-direction: column;
       height: auto;
       padding: 1rem;
     }
     .countdown {
+      position: static;
       justify-content: center;
+      margin-bottom: 0.5rem;
       flex-wrap: wrap;
     }
     .banner-central img {
@@ -107,6 +112,7 @@
     <div><span id="minutes"></span><br>min</div>
     <div><span id="seconds"></span><br>seg</div>
   </div>
+
   <!-- Banner centrado -->
   <div class="banner-central">
     <img src="https://raw.githubusercontent.com/ignacioarigos/Cololafest/main/Banner.PNG" alt="CololaFest - 100 Años de Colola">
