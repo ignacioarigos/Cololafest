@@ -12,35 +12,46 @@
     background-color: #fff;
     color: #333;
   }
-  /* Cabecera */
+
+  /* CABECERA */
   .top-bar {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
     background: rgba(0,0,0,0.85);
-    padding: 0.5rem;
-    color: white;
-    height: 3.5cm; /* altura total hasta la nav */
+    padding: 0 1rem;
+    height: 3.5cm; /* altura exacta portada */
+    box-sizing: border-box;
   }
+
   .countdown {
     display: flex;
     gap: 1rem;
-    justify-content: center;
-    align-items: center;
     font-weight: bold;
     text-align: center;
   }
+
   .countdown span {
     font-size: 1.5rem;
     color: #C71585; /* rosa/violeta logo */
   }
-  .banner-central img {
-    height: 100%; /* ocupa la altura del contenedor */
-    object-fit: cover;
-    display: block;
-    border-radius: 6px;
+
+  .banner-central {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  .banner-central img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    display: block;
+  }
+
+  /* NAV */
   nav {
     background-color: #333;
     display: flex;
@@ -55,6 +66,8 @@
   nav a:hover {
     background-color: #555;
   }
+
+  /* SECCIONES */
   .section {
     padding: 2rem;
     max-width: 900px;
@@ -63,13 +76,16 @@
   .section h2 {
     color: #c44;
   }
+
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     .top-bar {
-      grid-template-columns: 1fr;
+      flex-direction: column;
       height: auto;
+      padding: 1rem;
     }
-    .countdown {
-      flex-wrap: wrap;
+    .banner-central {
+      margin-top: 0.5rem;
     }
     .banner-central img {
       width: 100%;
@@ -82,15 +98,12 @@
 
 <!-- PORTADA SUPERIOR -->
 <section class="top-bar">
-  <!-- Countdown -->
   <div class="countdown">
     <div><span id="days"></span><br>días</div>
     <div><span id="hours"></span><br>horas</div>
     <div><span id="minutes"></span><br>min</div>
     <div><span id="seconds"></span><br>seg</div>
   </div>
-
-  <!-- Banner -->
   <div class="banner-central">
     <img src="https://raw.githubusercontent.com/ignacioarigos/Cololafest/main/Banner.PNG" alt="CololaFest - 100 Años de Colola">
   </div>
