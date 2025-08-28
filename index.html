@@ -12,14 +12,16 @@
     background-color: #fff;
     color: #333;
   }
+  /* Cabecera */
   .top-bar {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr auto;
     align-items: center;
     gap: 1rem;
     background: rgba(0,0,0,0.85);
     padding: 0.5rem;
     color: white;
+    height: 3.5cm; /* altura total hasta la nav */
   }
   .countdown {
     display: flex;
@@ -31,20 +33,13 @@
   }
   .countdown span {
     font-size: 1.5rem;
-    color: #C71585; /* rosa/violeta del logo */
+    color: #C71585; /* rosa/violeta logo */
   }
   .banner-central img {
-    height: 3.5cm;
+    height: 100%; /* ocupa la altura del contenedor */
     object-fit: cover;
     display: block;
-    margin: 0 auto;
     border-radius: 6px;
-  }
-  .clima {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 140px;
   }
   nav {
     background-color: #333;
@@ -71,15 +66,21 @@
   @media (max-width: 768px) {
     .top-bar {
       grid-template-columns: 1fr;
+      height: auto;
     }
     .countdown {
       flex-wrap: wrap;
+    }
+    .banner-central img {
+      width: 100%;
+      height: auto;
     }
   }
 </style>
 </head>
 <body>
 
+<!-- PORTADA SUPERIOR -->
 <section class="top-bar">
   <!-- Countdown -->
   <div class="countdown">
@@ -93,15 +94,9 @@
   <div class="banner-central">
     <img src="https://raw.githubusercontent.com/ignacioarigos/Cololafest/main/Banner.PNG" alt="CololaFest - 100 Años de Colola">
   </div>
-
-  <!-- Clima -->
-  <div class="clima">
-    <a class="weatherwidget-io" href="https://forecast7.com/es/n35d19n59d10/lobos/" 
-       data-label_1="LOBOS" data-font="Arial" data-icons="Climacons" 
-       data-days="3" data-theme="weather_one">LOBOS</a>
-  </div>
 </section>
 
+<!-- NAV -->
 <nav>
   <a href="#confirmar-asistencia">Confirmar Asistencia</a>
   <a href="#lista-asistentes">Lista de Asistentes</a>
@@ -109,16 +104,28 @@
   <a href="#fotos">Fotos</a>
 </nav>
 
+<!-- SOBRE COLOLA -->
 <div class="section" id="sobre-colola">
   <h2>Sobre Colola</h2>
-  <p>María Cornelia Méndez Casariego de Arigós, cariñosamente llamada Colola, fue una mujer que supo transformar cada etapa de su vida en un espacio de creación y aprendizaje...</p>
+  <p>María Cornelia Méndez Casariego de Arigós, cariñosamente llamada Colola, fue una mujer que supo transformar cada etapa de su vida en un espacio de creación y aprendizaje. Nacida en el seno de la familia Méndez Casariego y unida en matrimonio a Ramón Eduardo Arigós Lucero, con quien formó su hogar y familia, Colola cultivó no solo el amor por los suyos, sino también una profunda sensibilidad artística que la acompañó siempre.</p>
+  <p>A lo largo de su vida, dejó huellas imborrables en la literatura: autora de tres libros de poesía y de diversos relatos narrativos, exploró con delicadeza los matices de la existencia, los vínculos y la memoria. Su talento fue reconocido públicamente en 1998, cuando recibió el Primer Premio de Poesía de la Municipalidad de La Plata en el marco del certamen Abuelos Bonaerenses, gracias a su poema “La Vejez”, una obra que refleja con serenidad, ternura y lucidez la última etapa de la vida.</p>
+  <p>Lejos de conformarse con lo alcanzado, Colola continuó participando activamente en espacios de formación y crecimiento personal. A los 74 años integró el Programa de Educación Permanente para Adultos Mayores de la Facultad de Humanidades y Ciencias de la Educación (UNLP), demostrando que la búsqueda del conocimiento y la expresión artística no tienen edad.</p>
+  <p>Hoy, su legado permanece vivo no solo en su obra escrita, sino también en el recuerdo de quienes compartieron con ella la calidez de su palabra y la claridad de su mirada. Colola Méndez Casariego de Arigós es, en definitiva, un ejemplo de cómo la poesía puede ser compañía, testimonio y herencia.</p>
 </div>
 
+<!-- SOBRE EL EVENTO -->
 <div class="section" id="sobre-evento">
   <h2>Sobre el Evento</h2>
-  <p>100 años de Colola — Una vida que sigue iluminando...</p>
+  <p>100 años de Colola — Una vida que sigue iluminando</p>
+  <p>Este 21 de septiembre de 2025 se cumplen 100 años del nacimiento de Colola, y queremos celebrarlo como a ella le hubiese gustado: juntos, en familia, compartiendo mesa, música, risas y recuerdos.</p>
+  <p>Será un día especial para honrar su vida, su legado y la huella que dejó en cada uno de nosotros. Una oportunidad para volver a encontrarnos, brindar por la memoria de Colola y, sobre todo, para celebrar la unión que ella siempre supo sembrar.</p>
+  <p>📅 Cuándo: Domingo 21 de septiembre de 2025</p>
+  <p>📍 Dónde: [indicar lugar]</p>
+  <p>🎶 Qué haremos: Compartiremos una comida familiar, recordaremos a Colola, leeremos algunos de sus versos, cantaremos y festejaremos juntos.</p>
+  <p>Los invitamos con el corazón abierto a ser parte de este homenaje lleno de alegría, gratitud y amor. Porque 100 años no son solo un número: son una vida entera que nos sigue inspirando.</p>
 </div>
 
+<!-- Countdown Script -->
 <script>
   const eventDate = new Date("Sep 21, 2025 12:00:00").getTime();
   setInterval(function(){
@@ -132,15 +139,6 @@
       document.querySelector(".countdown").innerHTML = "¡El evento ha comenzado!";
     }
   },1000);
-</script>
-<script>
-!function(d,s,id){
-  var js,fjs=d.getElementsByTagName(s)[0];
-  if(!d.getElementById(id)){
-    js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
-    fjs.parentNode.insertBefore(js,fjs);
-  }
-}(document,'script','weatherwidget-io-js');
 </script>
 
 </body>
